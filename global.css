@@ -144,12 +144,15 @@ footer .social-media {
   border-top-left-radius: 25px;
   background-color: #955c1e;
   padding: 10px 15px;
+  display: flex;
+  align-items: center;
 }
 footer .social-media a {
   height: 100%;
   display: inline-block;
   border-radius: 30px;
   transition: background-color 0.2s;
+  margin-right: 10px;
 }
 footer .social-media a:hover,
 footer .social-media a:focus {
@@ -162,6 +165,9 @@ footer .social-media svg {
 footer .social-media a:hover svg,
 footer .social-media a:focus svg {
   fill: #a32216;
+}
+.youtube-icon {
+  padding: 2.5px;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
