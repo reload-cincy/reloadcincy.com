@@ -1,0 +1,28 @@
+main {
+  display: flex;
+  padding-bottom: 40px;
+}
+
+.gigs-sidebar {
+  padding: 10px;
+  background-color: #dddddd;
+  flex: 1;
+  box-shadow: 5px 5px;
+  border-radius: 3px;
+}
+
+.sections-container {
+  flex: 3;
+}
+
+section h2 {
+  border-bottom: 2px solid #955c1e;
+  background: linear-gradient(to right, #a32216 30%, #fff);
+  color: white;
+  padding: 10px;
+  padding-left: 20px;
+}
+
+.section-content {
+  padding-left: 20px;
+}
