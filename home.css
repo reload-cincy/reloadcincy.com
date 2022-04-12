@@ -1,6 +1,12 @@
 main {
   display: flex;
+  flex-direction: column;
   padding-bottom: 40px;
+}
+@media screen and (min-width: 700px) {
+  main {
+    flex-direction: row;
+  }
 }
 
 .gigs-sidebar {
