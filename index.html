@@ -31,19 +31,29 @@
       </div>
       <svg
         class="header-svg"
-        viewBox="0 0 100 40"
-        height="40"
+        height="50"
         preserveAspectRatio="none"
+        viewBox="0 0 100 100"
       >
-        <path fill="#000000" d="M 0 40 v -20 h 50 l -50 20"></path>
-        <path fill="#955c1e" d="M 50 20 h 50 v -20 l -50 20"></path>
+        <defs>
+          <linearGradient id="gradient1">
+            <stop offset="5%" stop-color="#955c1e" />
+            <stop offset="95%" stop-color="#a32216" />
+          </linearGradient>
+        </defs>
+        <path fill="#000000" d="M 0 90 L 50 50 L 50 45 L 0 45"></path>
+        <path
+          fill="url('#gradient1')"
+          d="M 0 100 L 100 10 L 100 0 L 0 90"
+        ></path>
+        <path fill="#D78A33" d="M 55.4 50 L 100 50  L 100 10"></path>
       </svg>
     </header>
     <main id="main-content" class="inner-content">
       <aside class="gigs-sidebar">
         <h2>Upcoming Gigs</h2>
         <div id="js-gig-container">
-          Please enable JavaScript to view upcoming Gigs
+          There are currently no upcoming gigs. Check back later!
         </div>
       </aside>
       <div class="sections-container">
@@ -72,7 +82,7 @@
         <section>
           <h2>Members</h2>
           <div class="section-content">
-            <table>
+            <table class="members-table">
               <tr>
                 <td>Kurt Kishler</td>
                 <td>Vocals</td>
@@ -80,6 +90,44 @@
               <tr>
                 <td>Victoria Weyman</td>
                 <td>Vocals</td>
+              </tr>
+              <tr></tr>
+              <tr>
+                <td>Dan Bernard</td>
+                <td>Trumpet</td>
+              </tr>
+              <tr>
+                <td>Mike Ratliff</td>
+                <td>Trumpet</td>
+              </tr>
+              <tr>
+                <td>Alexander Burdiss</td>
+                <td>Trombone</td>
+              </tr>
+              <tr>
+                <td>Mike Pilkenton</td>
+                <td>Tenor/Alto Saxophone</td>
+              </tr>
+              <tr>
+                <td>Kevin Court</td>
+                <td>Baritone/Tenor Saxophone</td>
+              </tr>
+              <tr></tr>
+              <tr>
+                <td>Ernie Christopher</td>
+                <td>Keyboards</td>
+              </tr>
+              <tr>
+                <td>Reed Shroyer</td>
+                <td>Electric Guitar, Vocals</td>
+              </tr>
+              <tr>
+                <td>Tim Crawford</td>
+                <td>Bass Guitar</td>
+              </tr>
+              <tr>
+                <td>Jim Brooks</td>
+                <td>Drums</td>
               </tr>
             </table>
           </div>

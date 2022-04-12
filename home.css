@@ -4,7 +4,7 @@ main {
 }
 
 .gigs-sidebar {
-  padding: 10px;
+  padding: 10px 20px;
   background-color: #dddddd;
   flex: 1;
   box-shadow: 5px 5px;
@@ -24,5 +24,13 @@ section h2 {
 }
 
 .section-content {
+  padding-left: 20px;
+}
+
+.members-table tr {
+  height: 1.2rem;
+}
+
+.members-table td:nth-of-type(2) {
   padding-left: 20px;
 }
