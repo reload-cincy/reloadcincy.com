@@ -10,7 +10,7 @@ main {
 }
 
 .gigs-sidebar {
-  padding: 10px 20px;
+  padding: 10px 20px 40px 20px;
   background-color: #dddddd;
   flex: 1;
   box-shadow: 5px 5px;
@@ -21,7 +21,7 @@ main {
   flex: 3;
 }
 
-section h2 {
+main section h2 {
   border-bottom: 2px solid #955c1e;
   background: linear-gradient(to right, #a32216 30%, #fff);
   color: white;
