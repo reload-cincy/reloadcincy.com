@@ -2,3 +2,8 @@ main {
   text-align: center;
   padding-bottom: 40px;
 }
+
+iframe,
+audio {
+  max-width: 100%;
+}

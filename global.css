@@ -22,11 +22,29 @@ h6 {
   text-transform: uppercase;
 }
 
+h1 {
+  background-image: linear-gradient(transparent 65%, #ff00005c 35%);
+  background-repeat: repeat-x;
+  background-size: 200% 100%;
+  display: inline-block;
+  padding: 0 60px;
+}
+
 .inner-content {
   max-width: 64rem;
   margin: auto;
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.visually-hidden-accessibility {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .skip-link {
@@ -130,7 +148,21 @@ footer {
 }
 footer .inner-content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+}
+#copyright {
+  padding-bottom: 10px;
+}
+@media screen and (min-width: 700px) {
+  footer .inner-content {
+    text-align: start;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  #copyright {
+    padding-bottom: 0;
+  }
 }
 footer a {
   color: #ffffff;
