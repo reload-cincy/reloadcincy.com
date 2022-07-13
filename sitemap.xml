@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- created with generateSitemap.sh v1.0.0 2022-07-05 -->
+<!-- created with generateSitemap.sh v1.0.0 2022-07-13 -->
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -8,22 +8,22 @@
 >
   <url>
     <loc>https://shelbyready.com/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-07-13</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://shelbyready.com/privacy-policy/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-07-13</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://shelbyready.com/press/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-07-13</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://shelbyready.com/listen/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-07-13</lastmod>
     <priority>0.80</priority>
   </url>
 </urlset>

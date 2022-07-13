@@ -4,4 +4,4 @@ Disallow: /404.html
 User-agent: *
 Allow: /
 
-Sitemap: http://aburdiss.github.io/reload-cincy/sitemap.xml
+Sitemap: http://reloadcincy.com/sitemap.xml
