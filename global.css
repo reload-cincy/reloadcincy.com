@@ -85,6 +85,7 @@ header img {
 header nav ul {
   list-style: none;
   display: flex;
+  padding-inline-start: 0;
 }
 header nav li a {
   padding: 10px;
