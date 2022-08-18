@@ -23,11 +23,17 @@ h6 {
 }
 
 h1 {
-  background-image: linear-gradient(transparent 65%, #ff00005c 35%);
+  background-image: linear-gradient(transparent 65%, #a322165c 35%);
   background-repeat: repeat-x;
   background-size: 200% 100%;
   display: inline-block;
   padding: 0 60px;
+}
+
+p,
+td,
+th {
+  line-height: 1.4rem;
 }
 
 .inner-content {
@@ -125,7 +131,6 @@ header nav li a {
 .contact-us {
   padding: 20px;
   background-color: #dddddd;
-  border-radius: 3px;
   box-shadow: 5px 5px;
 }
 main a,
@@ -151,6 +156,7 @@ footer .inner-content {
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin: 15px 0;
 }
 #copyright {
   padding-bottom: 10px;
@@ -160,6 +166,7 @@ footer .inner-content {
     text-align: start;
     justify-content: space-between;
     flex-direction: row;
+    margin: 0;
   }
   #copyright {
     padding-bottom: 0;

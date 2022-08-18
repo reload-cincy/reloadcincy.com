@@ -14,7 +14,6 @@ main {
   background-color: #dddddd;
   flex: 1;
   box-shadow: 5px 5px;
-  border-radius: 3px;
 }
 
 .sections-container {
@@ -31,6 +30,10 @@ main section h2 {
 
 .section-content {
   padding-left: 20px;
+}
+
+.members-table th {
+  padding-top: 10px;
 }
 
 .members-table tr {
