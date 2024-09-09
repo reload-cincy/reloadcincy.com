@@ -16,6 +16,34 @@ main {
   box-shadow: 5px 5px;
 }
 
+.gig {
+  margin: 30px 0;
+}
+
+.gig h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.gig .gig-time {
+  margin-bottom: 10px;
+}
+
+.gig .button {
+  background-color: #a32216;
+  transition: background-color 0.3s;
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.gig .button:hover,
+.gig .button:focus {
+  background-color: #955c1e;
+}
+
 .sections-container {
   flex: 3;
 }
