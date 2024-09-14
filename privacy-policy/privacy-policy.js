@@ -16,7 +16,6 @@ fetch(URL)
     const page = result[0];
 
     const headline = page.headline;
-    console.log(headlineContainer, headline);
     headlineContainer.innerText = headline;
 
     sanityBlockContent(privacyPolicyContainer, page.privacyPolicy);
