@@ -1,6 +1,8 @@
 let PROJECT_ID = 'm266lax5';
 let DATASET = 'production';
-let QUERY = encodeURIComponent('*[_type in ["home", "event", "contactBlock"]]');
+let QUERY = encodeURIComponent(
+  '*[_type in ["home", "event", "contactBlock", "member"]]'
+);
 
 let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
 
@@ -24,6 +26,9 @@ const contactBlockHeadlineContainer = document.querySelector(
 const contactBlockTextContainer = document.querySelector(
   '#contact-block-text-container'
 );
+const bandMembersContainer = document.querySelector(
+  '#js-band-members-container'
+);
 
 // fetch the content
 fetch(URL)
@@ -32,6 +37,13 @@ fetch(URL)
     const page = result.find((obj) => obj?._id === 'home');
     const contactBlock = result.find((obj) => obj?._id === 'contactBlock');
     const gigs = result.filter((obj) => obj?._type === 'event');
+    // sort all the members as well so that you don't have to sort every
+    // category
+    const members = result
+      .filter((obj) => obj?._type === 'member')
+      .sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+      });
 
     // Put data in home page
     const {
@@ -44,6 +56,9 @@ fetch(URL)
     firstSectionHeadlineContainer.innerText = firstSectionHeadline;
     sanityBlockContent(firstSectionTextContainer, firstSectionText);
     membersSectionHeadlineContainer.innerText = membersSectionHeadline;
+
+    // Put Band Members in section
+    handleBandMembers(members);
 
     // Put data in contact block
     const { contactHeadline, contactText } = contactBlock;
@@ -84,4 +99,35 @@ function makeGig({ headline, date, address1, address2, address3, eventUrl }) {
     <div>${address3}</div>
   </div>
 </a>`;
+}
+
+function handleBandMembers(members) {
+  const vocalMembers = members.filter((mem) => mem.group === 'vocals');
+  const hornMembers = members.filter((mem) => mem.group === 'horns');
+  const bandMembers = members.filter((mem) => mem.group === 'band');
+
+  let renderedHtml = '';
+
+  if (vocalMembers.length) {
+    renderedHtml += '<tr><th>Vocals</th></tr>';
+    renderedHtml += vocalMembers
+      .map((mem) => `<tr><td>${mem.name}</td><td>${mem.instrument}</td></tr>`)
+      .join('');
+  }
+  if (hornMembers.length) {
+    renderedHtml += '<tr><th>Horns</th></tr>';
+    renderedHtml += hornMembers
+      .map((mem) => `<tr><td>${mem.name}</td><td>${mem.instrument}</td></tr>`)
+      .join('');
+  }
+  if (bandMembers.length) {
+    renderedHtml += '<tr><th>Band</th></tr>';
+    renderedHtml += bandMembers
+      .map((mem) => `<tr><td>${mem.name}</td><td>${mem.instrument}</td></tr>`)
+      .join('');
+  }
+
+  if (renderedHtml) {
+    bandMembersContainer.innerHTML = renderedHtml;
+  }
 }
