@@ -3,6 +3,27 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
+header nav {
+  position: relative;
+  z-index: 1;
+}
+.active {
+  display: block;
+  width: 60px;
+  height: 8px;
+  background-color: #a32216;
+  transform: skew(-30deg);
+  position: absolute;
+  z-index: -1;
+  bottom: 9px;
+  left: 0;
+  opacity: 0;
+}
+
 a {
   text-decoration-color: transparent;
   transition: text-decoration-color 0.3s, color 0.3s;
