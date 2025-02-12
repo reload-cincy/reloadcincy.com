@@ -20,7 +20,7 @@ function sanityBlockContent(renderNode, block) {
   let isInList = false;
   let listParent = null;
 
-  block.forEach((item) => {
+  block?.forEach((item) => {
     if (item._type === 'block') {
       const style = item.style;
       const linkData = item.markDefs;
