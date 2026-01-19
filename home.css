@@ -7,9 +7,18 @@ main {
   flex-direction: column;
   padding-bottom: 40px;
 }
-@media screen and (min-width: 700px) {
+@media (min-width: 700px) {
   main {
     flex-direction: row;
+  }
+}
+
+.home-image {
+  max-width: 100%;
+}
+@media (min-width: 700px) {
+  .home-image {
+    padding-left: 20px;
   }
 }
 
@@ -62,8 +71,10 @@ main section h2 {
   padding-left: 20px;
 }
 
-.section-content {
-  padding-left: 20px;
+@media (min-width: 700px) {
+  .section-content {
+    padding-left: 20px;
+  }
 }
 
 .members-table th {

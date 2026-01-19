@@ -1,7 +1,37 @@
 let PROJECT_ID = 'm266lax5';
 let DATASET = 'production';
 let QUERY = encodeURIComponent(
-  '*[_type in ["home", "event", "contactBlock", "member"]]'
+  `*[_type in ["home", "event", "contactBlock", "member"]] {
+     _type == "home" => {
+       _id,
+       gigsHeadline,
+      firstSectionHeadline,
+      firstSectionText,
+      "firstSectionImageUrl": firstSectionImage.asset->url,
+      "firstSectionImageAlt": firstSectionImage.alt,
+      membersSectionHeadline
+     },
+     _type == "event" => {
+       _type,
+       date,
+       headline,
+       address1,
+       address2,
+       address3,
+       eventUrl
+     },
+     _type == "contactBlock" => {
+       _id,
+       contactHeadline,
+       contactText
+     },
+     _type == "member" => {
+       _type,
+       name,
+       group,
+       instrument
+     }
+   }`
 );
 
 let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
@@ -16,6 +46,9 @@ const firstSectionHeadlineContainer = document.querySelector(
 );
 const firstSectionTextContainer = document.querySelector(
   '#first-section-text-container'
+);
+const firstSectionImageContainer = document.querySelector(
+  '#first-section-image-container'
 );
 const membersSectionHeadlineContainer = document.querySelector(
   '#members-section-headline-container'
@@ -51,11 +84,21 @@ fetch(URL)
       firstSectionHeadline,
       firstSectionText,
       membersSectionHeadline,
+      firstSectionImageUrl,
+      firstSectionImageAlt,
     } = page;
     gigsHeadlineContainer.innerText = gigsHeadline;
     firstSectionHeadlineContainer.innerText = firstSectionHeadline;
     sanityBlockContent(firstSectionTextContainer, firstSectionText);
     membersSectionHeadlineContainer.innerText = membersSectionHeadline;
+    if (firstSectionImageUrl) {
+      console.log(firstSectionImageUrl);
+      const image = document.createElement('img');
+      image.src = firstSectionImageUrl;
+      image.alt = firstSectionImageAlt ?? '';
+      image.classList.add('home-image');
+      firstSectionImageContainer.appendChild(image);
+    }
 
     // Put Band Members in section
     handleBandMembers(members);
