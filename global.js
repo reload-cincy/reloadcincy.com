@@ -2,7 +2,7 @@
   // Set Copyright to correct year if it isn't alreay set.
   const year = new Date().getFullYear();
   const copyright = document.querySelector('#copyright');
-  copyright.innerText = `Copyright © ${year} - Reload, LLC`;
+  copyright.innerText = `Copyright ©${year} - Reload, LLC`;
 
   // Build Header Menus
   buildHeaderMenus();
