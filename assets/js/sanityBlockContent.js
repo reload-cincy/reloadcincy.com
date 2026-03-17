@@ -44,10 +44,14 @@ function sanityBlockContent(renderNode, block) {
 
       item.children.map((child) => {
         const text = child.text;
-        if (child.marks.length) {
+        if (child.marks.includes('strong')) {
+          const span = document.createElement('strong');
+          span.innerText = text;
+          parent.appendChild(span);
+        } else if (child.marks.length) {
           // This is an anchor and needs attached to its data in the parent;
           const href = linkData.find(
-            (item) => item._key === child.marks[0]
+            (item) => item._key === child.marks[0],
           )?.href;
           const link = document.createElement('a');
           link.href = href;

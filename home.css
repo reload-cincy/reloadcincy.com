@@ -36,15 +36,17 @@ main {
   text-decoration: none;
   border-left: 2px solid #955c1e;
   padding-left: 10px;
-  cursor: pointer;
   transition: transform 0.3s;
 }
-.gig:hover,
-.gig:focus {
+a.gig {
+  cursor: pointer;
+}
+a.gig:hover,
+a.gig:focus {
   transform: translateX(10px);
 }
-.gig:hover h3,
-.gig:focus h3 {
+a.gig:hover h3,
+a.gig:focus h3 {
   color: #955c1e;
 }
 

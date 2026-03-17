@@ -31,36 +31,36 @@ let QUERY = encodeURIComponent(
        group,
        instrument
      }
-   }`
+   }`,
 );
 
 let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
 
 const gigsHeadlineContainer = document.querySelector(
-  '#gigs-headline-container'
+  '#gigs-headline-container',
 );
 const gigsContainer = document.querySelector('#js-gig-container');
 gigsContainer.innerHTML = '<div>Loading Gigs...</div>';
 const firstSectionHeadlineContainer = document.querySelector(
-  '#first-section-headline-container'
+  '#first-section-headline-container',
 );
 const firstSectionTextContainer = document.querySelector(
-  '#first-section-text-container'
+  '#first-section-text-container',
 );
 const firstSectionImageContainer = document.querySelector(
-  '#first-section-image-container'
+  '#first-section-image-container',
 );
 const membersSectionHeadlineContainer = document.querySelector(
-  '#members-section-headline-container'
+  '#members-section-headline-container',
 );
 const contactBlockHeadlineContainer = document.querySelector(
-  '#contact-block-headline-container'
+  '#contact-block-headline-container',
 );
 const contactBlockTextContainer = document.querySelector(
-  '#contact-block-text-container'
+  '#contact-block-text-container',
 );
 const bandMembersContainer = document.querySelector(
-  '#js-band-members-container'
+  '#js-band-members-container',
 );
 
 // fetch the content
@@ -124,24 +124,24 @@ fetch(URL)
 
 function makeGig({ headline, date, address1, address2, address3, eventUrl }) {
   return `
-<a href="${eventUrl}" class="gig" title="Learn more about ${headline}">
+<${eventUrl ? `a href="${eventUrl}" title="Learn more about ${headline}"` : 'div'} class="gig">
   <h3>${headline}</h3>
   <div class="gig-time">
     <time datetime="${date}">${new Date(date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })} - ${new Date(date).toLocaleTimeString('en-US', {
-    hour: 'numeric',
-    minute: 'numeric',
-  })}</time>
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })} - ${new Date(date).toLocaleTimeString('en-US', {
+      hour: 'numeric',
+      minute: 'numeric',
+    })}</time>
   </div>
-  <div>${address1}</div>
+  <div>${address1 ?? ''}</div>
   <div class="gig-address">
-    <div>${address2}</div>
-    <div>${address3}</div>
+    <div>${address2 ?? ''}</div>
+    <div>${address3 ?? ''}</div>
   </div>
-</a>`;
+</${eventUrl ? 'a' : 'div'}>`;
 }
 
 function handleBandMembers(members) {
